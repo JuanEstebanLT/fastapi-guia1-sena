@@ -1,0 +1,45 @@
+# Entornos virtuales
+venv/
+.venv/
+env/
+ENV/
+
+# Caché y archivos compilados de Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+*.pyo
+
+# Variables de entorno y secretos locales
+.env
+.env.*
+!.env.example
+
+# Cachés de pruebas, análisis y herramientas
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+.uv-cache/
+
+# Editores e IDE
+.vscode/
+.idea/
+*.code-workspace
+
+# Archivos temporales del sistema
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.tmp
+*.temp
+*.swp
+*.swo
+~$*
+
+# Registros
+*.log
