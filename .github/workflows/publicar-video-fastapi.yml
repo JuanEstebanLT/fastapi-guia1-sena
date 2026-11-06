@@ -1,0 +1,45 @@
+name: Publicar video original de sustentacion
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/publicar-video-fastapi.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  ensamblar-video:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
+      - name: Reconstruir y verificar video
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import shutil, hashlib
+          parts = sorted(Path(".github/_fastapi_video_parts").glob("*.bin"))
+          assert len(parts) == 22, f"Partes incompletas: {len(parts)}"
+          video = Path("evidencias/Guia1 - FastAPI.mp4")
+          video.parent.mkdir(parents=True, exist_ok=True)
+          with video.open("wb") as output:
+              for piece in parts:
+                  with piece.open("rb") as source:
+                      shutil.copyfileobj(source, output)
+          assert video.stat().st_size == 31654439, "Tamano de video incorrecto"
+          assert hashlib.sha256(video.read_bytes()).hexdigest() == "14271d01519b78e2c024f029ee42c6f093b2eeffc830aabcfb8dc140ca9152a2", "Hash del video distinto al original"
+          print("Video reconstruido y verificado:", video, video.stat().st_size)
+          PY
+      - name: Publicar video y retirar archivos temporales
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- "evidencias/Guia1 - FastAPI.mp4"
+          git rm -r -- .github/_fastapi_video_parts
+          git rm -- .github/workflows/publicar-video-fastapi.yml
+          git commit -m "docs: publicar video original de sustentacion en evidencias"
+          git push origin HEAD:main
