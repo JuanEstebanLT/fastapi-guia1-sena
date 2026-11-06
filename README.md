@@ -13,7 +13,7 @@
 
 **Instructor:** Mateo Arroyave
 
-[Informe académico (PDF)](evidencias/Guia_FastAPI_Final.pdf) · [Laboratorio EV03](laboratorio_ev03/main.py) · [Catálogo EV04](catalogo_ev04/main.py)
+[Informe académico (PDF)](evidencias/Guia_FastAPI_Final.pdf) · [Video de sustentación](https://youtu.be/39X68AKH1gg) · [Laboratorio EV03](laboratorio_ev03/main.py) · [Catálogo EV04](catalogo_ev04/main.py)
 
 </div>
 
@@ -30,7 +30,7 @@ La entrega reúne dos componentes:
 
 Las dos aplicaciones se ejecutan **localmente y de forma independiente** con Python, FastAPI y Uvicorn. Sus operaciones fueron comprobadas manualmente mediante Swagger UI. El catálogo utiliza una lista en memoria; no requiere base de datos, autenticación ni despliegue en la nube.
 
-> **Estado de entrega:** las cuatro evidencias y el informe están publicados. **La sustentación audiovisual grupal y su enlace están pendientes de grabación y publicación.**
+> **Estado de entrega:** las cuatro evidencias, el informe y la sustentación audiovisual grupal están publicados.
 
 ## Tabla de contenido
 
@@ -341,11 +341,15 @@ El PDF es el documento de revisión académica; los archivos Python de este repo
 
 ## Sustentación en video
 
-**Estado: pendiente de grabación y publicación grupal.**
+**Estado: grabada y publicada.**
 
-La sustentación se realizará con ambos integrantes e incluirá una explicación del trabajo conceptual y demostraciones de los laboratorios. Una vez que esté publicado y revisado el material audiovisual, se añadirá **aquí** el enlace definitivo.
+**[Ver sustentación grupal de la Guía 1 de FastAPI en YouTube](https://youtu.be/39X68AKH1gg)**
 
-No existe todavía una URL de sustentación confirmada.
+[![Ver video de sustentación](https://img.youtube.com/vi/39X68AKH1gg/hqdefault.jpg)](https://youtu.be/39X68AKH1gg)
+
+La exposición corresponde al equipo integrado por **Juan Esteban Lezcano Tejada, Mariana Suárez y Emanuel Villa**. En el video se explican los conceptos fundamentales y se presentan las evidencias prácticas EV03 y EV04.
+
+El video se encuentra disponible en YouTube; las evidencias académicas y el código fuente se conservan en este repositorio.
 
 ## Equipo académico
 
