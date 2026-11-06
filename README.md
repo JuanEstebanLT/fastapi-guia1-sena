@@ -114,7 +114,8 @@ fastapi-guia1-sena/
 ├── catalogo_ev04/
 │   └── main.py                # Mini-API de Catálogo: 5 endpoints
 ├── evidencias/
-│   └── Guia_FastAPI_Final.pdf # Informe académico: EV01 a EV04
+│   ├── Guia_FastAPI_Final.pdf # Informe académico: EV01 a EV04
+│   └── Guia1 - FastAPI.mp4    # Video original de sustentación
 ├── laboratorio_ev03/
 │   └── main.py                # Laboratorio básico: 6 endpoints
 ├── main.py                    # Archivo original del laboratorio
@@ -339,17 +340,19 @@ El [**informe final en PDF**](evidencias/Guia_FastAPI_Final.pdf) contiene:
 
 El PDF es el documento de revisión académica; los archivos Python de este repositorio son el código ejecutable de las evidencias prácticas.
 
+**Archivo audiovisual de la entrega:** [Guia1 - FastAPI.mp4](evidencias/Guia1%20-%20FastAPI.mp4).
+
 ## Sustentación en video
 
 **Estado: grabada y publicada.**
 
-**[Ver sustentación grupal de la Guía 1 de FastAPI en YouTube](https://youtu.be/39X68AKH1gg)**
+**[Ver sustentación grupal de la Guía 1 de FastAPI en YouTube](https://youtu.be/39X68AKH1gg)** · **[Descargar MP4 desde el repositorio](evidencias/Guia1%20-%20FastAPI.mp4)**
 
 [![Ver video de sustentación](https://img.youtube.com/vi/39X68AKH1gg/hqdefault.jpg)](https://youtu.be/39X68AKH1gg)
 
 La exposición corresponde al equipo integrado por **Juan Esteban Lezcano Tejada, Mariana Suárez y Emanuel Villa**. En el video se explican los conceptos fundamentales y se presentan las evidencias prácticas EV03 y EV04.
 
-El video se encuentra disponible en YouTube; las evidencias académicas y el código fuente se conservan en este repositorio.
+El video está publicado en YouTube y también se conserva una copia original en la carpeta [`evidencias/`](evidencias/), junto con el informe académico. El código fuente permanece disponible en las carpetas de cada laboratorio.
 
 ## Equipo académico
 
