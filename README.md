@@ -353,6 +353,7 @@ No existe todavía una URL de sustentación confirmada.
 | --- | --- |
 | **Juan Esteban Lezcano Tejada** | Integrante del equipo |
 | **Mariana Suárez** | Integrante del equipo |
+| **Emanuel Villa** | Integrante del equipo |
 
 **Instructor:** Mateo Arroyave  
 **Institución:** Servicio Nacional de Aprendizaje (SENA)  
