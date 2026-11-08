@@ -1,0 +1,1 @@
+"""Routers de productos y categorías."""

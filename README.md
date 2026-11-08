@@ -1,19 +1,17 @@
 <div align="center">
 
-# Guía 1 · Desarrollo de API REST con FastAPI
+# FastAPI · SENA | Guías de aprendizaje
 
-### Fundamentos, laboratorio de endpoints y Mini-API de Catálogo
+### Desarrollo progresivo de API REST con Python
 
-[![Python](https://img.shields.io/badge/Python-3.15-3776AB?style=flat-square&logo=python&logoColor=white)](https://www.python.org/)
+[![Python](https://img.shields.io/badge/Python-Lenguaje-3776AB?style=flat-square&logo=python&logoColor=white)](https://www.python.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-Framework-009688?style=flat-square&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
 [![Uvicorn](https://img.shields.io/badge/Uvicorn-ASGI-4051B5?style=flat-square)](https://www.uvicorn.org/)
 [![GitHub](https://img.shields.io/badge/GitHub-Repositorio-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/JuanEstebanLT/fastapi-guia1-sena)
 
-**Servicio Nacional de Aprendizaje (SENA)** · **Análisis y Desarrollo de Software (ADSO)**
-
-**Instructor:** Mateo Arroyave
-
-[Informe académico (PDF)](evidencias/Guia_FastAPI_Final.pdf) · [Video de sustentación](https://youtu.be/39X68AKH1gg) · [Laboratorio EV03](laboratorio_ev03/main.py) · [Catálogo EV04](catalogo_ev04/main.py)
+**SENA · Análisis y Desarrollo de Software (ADSO)**  
+**Instructor:** Mateo Arroyave  
+**Equipo:** Juan Esteban Lezcano Tejada · Mariana Suárez · Emanuel Villa
 
 </div>
 
@@ -21,366 +19,197 @@
 
 ## Descripción
 
-Repositorio académico de la **Guía 1 de FastAPI**, desarrollado para comprender el funcionamiento de las interfaces de programación de aplicaciones (API), las solicitudes HTTP, los parámetros de ruta y consulta, las respuestas JSON y los códigos de estado.
+Repositorio académico único para las guías progresivas del curso **FastAPI**. Cada guía se encuentra aislada dentro de su carpeta y define su propia aplicación; esto permite ejecutarlas, probarlas y documentarlas de manera independiente, sin mezclar los endpoints de diferentes actividades.
 
-La entrega reúne dos componentes:
+Las prácticas son **proyectos de aprendizaje**: no cuentan con despliegue público ni persistencia en una base de datos. Los datos de ejemplo se mantienen en memoria mientras está activo el servidor.
 
-- **Fundamentación (EV01 y EV02):** reflexión inicial, comparación de Flask y FastAPI y mapa conceptual.
-- **Implementación (EV03 y EV04):** laboratorio de seis endpoints y Mini-API de Catálogo con cinco endpoints de consulta.
+## Índice
 
-Las dos aplicaciones se ejecutan **localmente y de forma independiente** con Python, FastAPI y Uvicorn. Sus operaciones fueron comprobadas manualmente mediante Swagger UI. El catálogo utiliza una lista en memoria; no requiere base de datos, autenticación ni despliegue en la nube.
-
-> **Estado de entrega:** las cuatro evidencias, el informe y la sustentación audiovisual grupal están publicados.
-
-## Tabla de contenido
-
-- [Objetivo y alcance](#objetivo-y-alcance)
-- [Evidencias académicas](#evidencias-académicas)
-- [Tecnologías](#tecnologías)
+- [Guías disponibles](#guías-disponibles)
 - [Arquitectura](#arquitectura)
-- [Estructura del repositorio](#estructura-del-repositorio)
+- [Estructura de carpetas](#estructura-de-carpetas)
 - [Instalación](#instalación)
-- [Ejecución de los laboratorios](#ejecución-de-los-laboratorios)
-- [API del laboratorio EV03](#api-del-laboratorio-ev03)
-- [API del catálogo EV04](#api-del-catálogo-ev04)
-- [Pruebas y resultados](#pruebas-y-resultados)
-- [Documentación y evidencias](#documentación-y-evidencias)
-- [Sustentación en video](#sustentación-en-video)
-- [Equipo académico](#equipo-académico)
-- [Referencias técnicas](#referencias-técnicas)
+- [Ejecutar cada guía](#ejecutar-cada-guía)
+- [Pruebas automatizadas](#pruebas-automatizadas)
+- [Evidencias y sustentación](#evidencias-y-sustentación)
+- [Estado de las entregas](#estado-de-las-entregas)
+- [Equipo y referencias](#equipo-y-referencias)
 
-## Objetivo y alcance
+## Guías disponibles
 
-**Objetivo general:** aplicar los fundamentos de las API REST mediante la creación, ejecución y validación de endpoints con FastAPI.
-
-**Objetivos específicos:**
-
-1. Comprender API, HTTP, JSON, endpoints, métodos y códigos de estado.
-2. Comparar los enfoques de Flask y FastAPI en el desarrollo de servicios web.
-3. Implementar y probar parámetros de ruta y de consulta con validación automática de tipos.
-4. Construir un catálogo de consulta en memoria y controlar el caso de un recurso inexistente.
-
-**Alcance implementado:** solicitudes GET, datos de prueba, respuestas JSON, validación de parámetros, error HTTP 404, documentación automática OpenAPI/Swagger UI y ejecución local.
-
-**Fuera del alcance de esta guía:** persistencia en una base de datos, autenticación, operaciones de escritura (POST/PUT/DELETE), interfaz frontend y despliegue público de las API. Estos componentes no son necesarios para reproducir las prácticas documentadas.
-
-## Evidencias académicas
-
-| Código | Evidencia | Entregable | Estado |
+| Guía | Contenido | Aplicaciones / endpoints | Evidencias |
 | --- | --- | --- | --- |
-| GA1-AA1-EV01 | Reflexión inicial sobre API y arquitectura web | Cuatro preguntas desarrolladas | Completa |
-| GA1-AA1-EV02 | Comparación conceptual | Tabla Flask/FastAPI y mapa conceptual | Completa |
-| GA1-AA2-EV03 | Laboratorio introductorio | Seis rutas GET, pruebas y código | Completa |
-| GA1-AA3-EV04 | Mini-API de Catálogo | Cinco rutas GET, productos en memoria y pruebas | Completa |
+| [**Guía 1**](guia_01/README.md) | Fundamentos de API, HTTP, consultas GET y Swagger UI | Laboratorio: 6 rutas GET; catálogo: 5 rutas GET | [PDF](guia_01/evidencias/Guia_FastAPI_Final.pdf) · [Video](https://youtu.be/39X68AKH1gg) |
+| [**Guía 2**](guia_02/README.md) | CRUD, validación Pydantic y módulos APIRouter | Tienda: 5 rutas de productos + 5 de categorías y ruta de inicio | Capturas e informe pendientes |
 
-El desarrollo, las capturas de pantalla y el análisis de las cuatro evidencias están consolidados en el [informe académico de la Guía 1](evidencias/Guia_FastAPI_Final.pdf).
-
-## Tecnologías
-
-| Tecnología | Función |
-| --- | --- |
-| **Python 3.15.0** | Lenguaje utilizado en el entorno de desarrollo |
-| **FastAPI** | Definición de rutas HTTP, tipado y validación |
-| **Uvicorn** | Servidor ASGI para ejecución local |
-| **Pydantic** | Soporte de validación de datos integrado con FastAPI |
-| **Swagger UI y ReDoc** | Documentación generada desde OpenAPI |
-| **Git / GitHub** | Versionado y publicación de entregables |
-
-No se necesita Supabase, PostgreSQL, Docker ni ninguna plataforma externa para ejecutar estas actividades.
+> La **Guía 1** tiene informe y sustentación publicados. En la **Guía 2** el código y las pruebas automatizadas están preparados; todavía faltan las capturas de Swagger UI, las evidencias teóricas y la sustentación, si la exige el instructor.
 
 ## Arquitectura
 
-Las prácticas siguen un flujo cliente–servidor sencillo. FastAPI procesa las solicitudes HTTP y devuelve respuestas JSON.
+Cada práctica expone una instancia independiente de FastAPI. Se inicia **una aplicación por vez** en el puerto 8000, o se asignan puertos distintos si se necesitan simultáneamente.
 
-~~~mermaid
+```mermaid
 flowchart TD
-    C[Cliente: navegador o Swagger UI] -->|Solicitud HTTP GET| U[Uvicorn - servidor ASGI]
-    U --> A[Aplicación FastAPI]
-    A --> D{Práctica ejecutada}
-    D -->|EV03| E[Endpoints de laboratorio]
-    D -->|EV04| F[Endpoints de catálogo]
-    F --> M[Lista de productos en memoria]
-    E --> R[Respuesta JSON y código HTTP]
-    M --> R
-    R --> C
-~~~
+  A[Cliente: Swagger UI, navegador o TestClient] -->|HTTP y JSON| B{Aplicación seleccionada}
+  B --> C[Guía 1: laboratorio EV03]
+  B --> D[Guía 1: catálogo EV04]
+  B --> E[Guía 2: tienda API]
+  E --> F[APIRouter: Productos]
+  E --> G[APIRouter: Categorías]
+  F --> H[Datos en memoria]
+  G --> H
+```
 
-**Separación de las aplicaciones:** <code>laboratorio_ev03/main.py</code> y <code>catalogo_ev04/main.py</code> contienen instancias independientes de FastAPI. Aunque algunas rutas tienen nombres iguales, no se ejecutan simultáneamente en el mismo puerto.
+La Guía 1 conserva el laboratorio y catálogo separados. En la Guía 2, `main.py` incorpora los routers de productos y categorías, y Pydantic valida los cuerpos JSON de las peticiones `POST` y `PUT`.
 
-## Estructura del repositorio
+## Estructura de carpetas
 
-~~~text
+```text
 fastapi-guia1-sena/
-├── catalogo_ev04/
-│   └── main.py                # Mini-API de Catálogo: 5 endpoints
-├── evidencias/
-│   ├── Guia_FastAPI_Final.pdf # Informe académico: EV01 a EV04
-│   └── Guia1 - FastAPI.mp4    # Video original de sustentación
-├── laboratorio_ev03/
-│   └── main.py                # Laboratorio básico: 6 endpoints
-├── main.py                    # Archivo original del laboratorio
+├── guia_01/
+│   ├── laboratorio_ev03/
+│   │   └── main.py
+│   ├── catalogo_ev04/
+│   │   └── main.py
+│   ├── evidencias/
+│   │   ├── Guia_FastAPI_Final.pdf
+│   │   └── Guia1 - FastAPI.mp4
+│   ├── main.py
+│   └── README.md
+├── guia_02/
+│   ├── tienda_api/
+│   │   ├── main.py
+│   │   └── routers/
+│   │       ├── __init__.py
+│   │       ├── productos.py
+│   │       └── categorias.py
+│   ├── evidencias/
+│   │   └── README.md
+│   └── README.md
+├── evidencias/                 # Copias de compatibilidad de Guía 1
+├── tests/
+│   ├── test_guia_01.py
+│   └── test_guia_02.py
+├── requirements.txt
+├── requirements-dev.txt
 ├── .gitignore
 └── README.md
-~~~
+```
 
-El entorno virtual <code>venv/</code> y la caché de Python <code>__pycache__/</code> son locales y están excluidos del control de versiones.
+La carpeta `evidencias/` de la raíz se conserva **solo para no romper enlaces previos** al PDF y video de la Guía 1. El directorio organizado por guía es `guia_01/evidencias/`.
 
 ## Instalación
 
-### Requisitos previos
+Desde Windows (CMD o PowerShell):
 
-- Python instalado y disponible mediante <code>py</code> o <code>python</code>.
-- Git para clonar el repositorio.
-- Terminal Windows (CMD o PowerShell).
-
-### 1. Clonar el proyecto
-
-~~~powershell
+```powershell
 git clone https://github.com/JuanEstebanLT/fastapi-guia1-sena.git
 cd fastapi-guia1-sena
-~~~
-
-### 2. Crear el entorno virtual
-
-En Windows, utilizando el lanzador de Python:
-
-~~~powershell
 py -m venv venv
-~~~
+```
 
-### 3. Activar el entorno
+**Activar entorno virtual en CMD:**
 
-**CMD:**
-
-~~~bat
+```bat
 venv\Scripts\activate.bat
-~~~
+```
 
-**PowerShell:**
+**O en PowerShell:**
 
-~~~powershell
+```powershell
 .\venv\Scripts\Activate.ps1
-~~~
+```
 
-Si PowerShell restringe la ejecución de scripts, puede activarse el entorno con la terminal CMD o ejecutar el intérprete de <code>venv</code> directamente.
+**Instalar dependencias de ejecución:**
 
-### 4. Instalar dependencias
+```powershell
+python -m pip install -r requirements.txt
+```
 
-~~~powershell
-python -m pip install fastapi uvicorn
-~~~
+Si se desean ejecutar las pruebas automatizadas, instalar adicionalmente las dependencias de desarrollo:
 
-Se utilizan las dependencias esenciales, sin el extra opcional <code>uvicorn[standard]</code>, porque en el entorno de Python 3.15 utilizado para la práctica este extra presentó un problema de compilación con PyYAML.
+```powershell
+python -m pip install -r requirements-dev.txt
+```
 
-## Ejecución de los laboratorios
+> Todos los comandos siguientes se ejecutan **desde la raíz del repositorio**, no desde las carpetas de las guías.
 
-Ejecutar los comandos **desde la raíz del repositorio**, con el entorno virtual activado.
+## Ejecutar cada guía
 
-### EV03 — Laboratorio introductorio
+### Guía 1 — Laboratorio EV03
 
-~~~powershell
-python -m uvicorn laboratorio_ev03.main:app --reload
-~~~
+```powershell
+python -m uvicorn guia_01.laboratorio_ev03.main:app --reload
+```
 
-### EV04 — Mini-API de Catálogo
+**Seis endpoints GET:** `/`, `/productos/{producto_id}`, `/buscar`, `/categorias/{categoria_id}`, `/saludo/{nombre}` y `/filtrar`.
 
-~~~powershell
-python -m uvicorn catalogo_ev04.main:app --reload
-~~~
+### Guía 1 — Catálogo EV04
 
-Por defecto, la aplicación activa queda disponible en <http://127.0.0.1:8000>. Para iniciar la otra práctica, detener primero el servidor con **Ctrl + C**. No deben iniciarse ambas en el puerto 8000 al mismo tiempo.
+```powershell
+python -m uvicorn guia_01.catalogo_ev04.main:app --reload
+```
 
-**Documentación local (con el servidor en ejecución):**
+**Cinco endpoints GET:** `/`, `/productos`, `/productos/{producto_id}`, `/categorias` y `/buscar`.
+
+### Guía 2 — CRUD de productos y categorías
+
+```powershell
+python -m uvicorn guia_02.tienda_api.main:app --reload
+```
+
+La Guía 2 ofrece **cinco rutas de productos** y **cinco de categorías**, agrupadas en Swagger UI mediante `APIRouter`, además del endpoint de bienvenida `/`.
+
+**Para todas las prácticas:**
 
 - Swagger UI: <http://127.0.0.1:8000/docs>
 - ReDoc: <http://127.0.0.1:8000/redoc>
-- Esquema OpenAPI: <http://127.0.0.1:8000/openapi.json>
+- OpenAPI: <http://127.0.0.1:8000/openapi.json>
 
-Estos enlaces son direcciones locales, no un despliegue público.
+Detener la aplicación actual con **Ctrl + C** antes de iniciar otra en el mismo puerto. La documentación muestra **solo los endpoints de la aplicación que esté en ejecución**.
 
-## API del laboratorio EV03
+## Pruebas automatizadas
 
-Archivo: [<code>laboratorio_ev03/main.py</code>](laboratorio_ev03/main.py)
+Desde la raíz del repositorio y con `requirements-dev.txt` instalado:
 
-| Método | Endpoint | Parámetros | Respuesta |
-| --- | --- | --- | --- |
-| GET | <code>/</code> | Ninguno | Mensaje inicial |
-| GET | <code>/productos/{producto_id}</code> | <code>producto_id: int</code> | ID y mensaje |
-| GET | <code>/buscar</code> | <code>nombre: str</code>, <code>precio_max: float</code> (opcionales) | Parámetros recibidos |
-| GET | <code>/categorias/{categoria_id}</code> | <code>categoria_id: int</code> | ID de categoría y mensaje |
-| GET | <code>/saludo/{nombre}</code> | <code>nombre: str</code> | Saludo personalizado |
-| GET | <code>/filtrar</code> | <code>categoria: str</code>, <code>disponible: bool</code> | Filtros recibidos |
+**Solo Guía 1:**
 
-**Ejemplo: parámetro de ruta válido**
+```powershell
+python -m pytest tests/test_guia_01.py -q
+```
 
-~~~http
-GET /productos/5
-~~~
+**Solo Guía 2:**
 
-~~~json
-{
-  "producto_id": 5,
-  "mensaje": "Producto solicitado"
-}
-~~~
+```powershell
+python -m pytest tests/test_guia_02.py -q
+```
 
-Si se envía un identificador no numérico, por ejemplo <code>GET /productos/abc</code>, FastAPI devuelve **HTTP 422** debido a la validación automática del tipo entero.
+**Todas las guías:**
 
-**Ejemplo: parámetros de consulta**
+```powershell
+python -m pytest tests -q
+```
 
-~~~http
-GET /buscar?nombre=teclado&precio_max=150000
-~~~
+Las pruebas usan `TestClient` y verifican respuestas correctas, CRUD y errores HTTP `404` y `422`. Estas pruebas automatizadas **no reemplazan las capturas de `/docs`** que solicita el instructor para la Guía 2.
 
-~~~json
-{
-  "buscando": "teclado",
-  "precio_maximo": 150000
-}
-~~~
+## Evidencias y sustentación
 
-> En EV03, <code>/buscar</code> devuelve los valores recibidos; **no consulta ni filtra un catálogo**. El filtrado de productos se implementa en EV04.
+- **Guía 1:** [Informe final PDF](guia_01/evidencias/Guia_FastAPI_Final.pdf), [archivo MP4](guia_01/evidencias/Guia1%20-%20FastAPI.mp4) y [video publicado en YouTube](https://youtu.be/39X68AKH1gg).
+- **Guía 2:** [Requisitos de evidencias pendientes](guia_02/evidencias/README.md). La guía solicita capturas de CRUD de categorías, incluidos casos `404` y `422`, junto con README y enlace al repositorio.
 
-## API del catálogo EV04
+## Estado de las entregas
 
-Archivo: [<code>catalogo_ev04/main.py</code>](catalogo_ev04/main.py)
+| Guía | Código | Pruebas | Informe y evidencias | Sustentación |
+| --- | --- | --- | --- | --- |
+| 1 | Implementado | Documentadas y automatizadas | Publicado | [Video disponible](https://youtu.be/39X68AKH1gg) |
+| 2 | Implementado en la estructura modular | Automatizadas localmente; capturas pendientes | Pendiente | Por definir con el instructor |
 
-| Método | Endpoint | Descripción | Respuesta esperada |
-| --- | --- | --- | --- |
-| GET | <code>/</code> | Mensaje de bienvenida | 200 |
-| GET | <code>/productos</code> | Lista los productos | 200 |
-| GET | <code>/productos/{producto_id}</code> | Busca por identificador | 200 / 404 |
-| GET | <code>/categorias</code> | Obtiene categorías sin duplicados | 200 |
-| GET | <code>/buscar?nombre=mouse</code> | Filtra por coincidencia parcial | 200 |
+## Equipo y referencias
 
-### Datos de prueba en memoria
+**Integrantes:** Juan Esteban Lezcano Tejada, Mariana Suárez y Emanuel Villa.  
+**Instructor:** Mateo Arroyave.  
+**Institución:** Servicio Nacional de Aprendizaje (SENA), ADSO.
 
-| ID | Producto | Precio (COP) | Categoría |
-| --- | --- | ---: | --- |
-| 1 | Teclado mecanico | 120.000 | Perifericos |
-| 2 | Mouse gamer | 85.000 | Perifericos |
-| 3 | Monitor 24 | 650.000 | Pantallas |
+Documentación: [FastAPI](https://fastapi.tiangolo.com/), [APIRouter](https://fastapi.tiangolo.com/tutorial/bigger-applications/), [Pydantic](https://docs.pydantic.dev/latest/concepts/models/) y [Uvicorn](https://www.uvicorn.org/).
 
-Los datos están definidos en una lista de diccionarios Python y se reinician cuando se modifica o reinicia el proceso.
-
-### Ejemplos de respuestas
-
-**Producto existente**
-
-~~~http
-GET /productos/2
-~~~
-
-~~~json
-{
-  "id": 2,
-  "nombre": "Mouse gamer",
-  "precio": 85000,
-  "categoria": "Perifericos"
-}
-~~~
-
-**Producto inexistente**
-
-~~~http
-GET /productos/99
-~~~
-
-~~~json
-{
-  "detail": "Producto no encontrado"
-}
-~~~
-
-La segunda solicitud devuelve **HTTP 404 Not Found** de forma controlada.
-
-**Búsqueda por nombre**
-
-~~~http
-GET /buscar?nombre=mouse
-~~~
-
-~~~json
-[
-  {
-    "id": 2,
-    "nombre": "Mouse gamer",
-    "precio": 85000,
-    "categoria": "Perifericos"
-  }
-]
-~~~
-
-La búsqueda no distingue mayúsculas de minúsculas y admite coincidencias parciales.
-
-## Pruebas y resultados
-
-Las pruebas fueron ejecutadas manualmente en el entorno local, mediante el botón **Try it out → Execute** de Swagger UI. El informe conserva capturas donde se observan la petición, el código HTTP y la respuesta JSON.
-
-| Componente | Pruebas documentadas | Resultado |
-| --- | --- | --- |
-| EV03 | Seis endpoints GET con entradas válidas | 200 OK |
-| EV03 | Identificador no numérico (<code>/productos/abc</code>) | 422 |
-| EV04 | Cinco endpoints GET con datos válidos | 200 OK |
-| EV04 | Identificador inexistente (<code>/productos/99</code>) | 404 |
-
-Estas son **pruebas manuales** respaldadas por capturas. El proyecto no incorpora por ahora una suite automatizada ni un flujo CI/CD.
-
-Las rutas <code>/docs</code>, <code>/redoc</code> y <code>/openapi.json</code> son proporcionadas automáticamente por FastAPI; no se cuentan entre los endpoints de las evidencias.
-
-## Documentación y evidencias
-
-El [**informe final en PDF**](evidencias/Guia_FastAPI_Final.pdf) contiene:
-
-- **EV01:** reflexión inicial sobre API, aplicaciones cliente–servidor, frontend y backend.
-- **EV02:** comparación entre Flask y FastAPI y mapa conceptual de API, HTTP, métodos, endpoints, JSON y códigos de estado.
-- **EV03:** explicación del laboratorio, código fuente, capturas de los endpoints y validación HTTP 422.
-- **EV04:** diseño del catálogo, código, resultados de las cinco rutas y prueba HTTP 404.
-- Portada grupal, índice, introducción, objetivos, conclusiones, referencias y control de versiones.
-
-El PDF es el documento de revisión académica; los archivos Python de este repositorio son el código ejecutable de las evidencias prácticas.
-
-**Archivo audiovisual de la entrega:** [Guia1 - FastAPI.mp4](evidencias/Guia1%20-%20FastAPI.mp4).
-
-## Sustentación en video
-
-**Estado: grabada y publicada.**
-
-**[Ver sustentación grupal de la Guía 1 de FastAPI en YouTube](https://youtu.be/39X68AKH1gg)** · **[Descargar MP4 desde el repositorio](evidencias/Guia1%20-%20FastAPI.mp4)**
-
-[![Ver video de sustentación](https://img.youtube.com/vi/39X68AKH1gg/hqdefault.jpg)](https://youtu.be/39X68AKH1gg)
-
-La exposición corresponde al equipo integrado por **Juan Esteban Lezcano Tejada, Mariana Suárez y Emanuel Villa**. En el video se explican los conceptos fundamentales y se presentan las evidencias prácticas EV03 y EV04.
-
-El video está publicado en YouTube y también se conserva una copia original en la carpeta [`evidencias/`](evidencias/), junto con el informe académico. El código fuente permanece disponible en las carpetas de cada laboratorio.
-
-## Equipo académico
-
-| Integrante | Participación |
-| --- | --- |
-| **Juan Esteban Lezcano Tejada** | Integrante del equipo |
-| **Mariana Suárez** | Integrante del equipo |
-| **Emanuel Villa** | Integrante del equipo |
-
-**Instructor:** Mateo Arroyave  
-**Institución:** Servicio Nacional de Aprendizaje (SENA)  
-**Programa:** Análisis y Desarrollo de Software (ADSO)
-
-## Referencias técnicas
-
-- [FastAPI — Documentación oficial](https://fastapi.tiangolo.com/)
-- [FastAPI — Primeros pasos](https://fastapi.tiangolo.com/es/tutorial/first-steps/)
-- [FastAPI — Parámetros de ruta](https://fastapi.tiangolo.com/tutorial/path-params/)
-- [FastAPI — Parámetros de consulta](https://fastapi.tiangolo.com/tutorial/query-params/)
-- [Uvicorn — Documentación oficial](https://www.uvicorn.org/)
-- [Flask — Documentación oficial](https://flask.palletsprojects.com/en/stable/)
-
----
-
-<div align="center">
-
-**Guía 1 de FastAPI · SENA · ADSO**
-
-Repositorio de aprendizaje con código reproducible, documentación y evidencias de ejecución.
-
-</div>
+> El nombre histórico del repositorio es `fastapi-guia1-sena`. Si posteriormente se renombra desde **Settings → General → Repository name** a `fastapi-sena`, se actualizarán los enlaces y comandos de clonación del README para reflejar la nueva URL.
