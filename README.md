@@ -7,7 +7,7 @@
 [![Python](https://img.shields.io/badge/Python-Lenguaje-3776AB?style=flat-square&logo=python&logoColor=white)](https://www.python.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-Framework-009688?style=flat-square&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
 [![Uvicorn](https://img.shields.io/badge/Uvicorn-ASGI-4051B5?style=flat-square)](https://www.uvicorn.org/)
-[![GitHub](https://img.shields.io/badge/GitHub-Repositorio-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/JuanEstebanLT/fastapi-guia1-sena)
+[![GitHub](https://img.shields.io/badge/GitHub-Repositorio-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/JuanEstebanLT/fastapi-sena)
 
 **SENA · Análisis y Desarrollo de Software (ADSO)**  
 **Instructor:** Mateo Arroyave  
@@ -65,7 +65,7 @@ La Guía 1 conserva el laboratorio y catálogo separados. En la Guía 2, `main.p
 ## Estructura de carpetas
 
 ```text
-fastapi-guia1-sena/
+fastapi-sena/
 ├── guia_01/
 │   ├── laboratorio_ev03/
 │   │   └── main.py
@@ -103,8 +103,8 @@ La carpeta `evidencias/` de la raíz se conserva **solo para no romper enlaces p
 Desde Windows (CMD o PowerShell):
 
 ```powershell
-git clone https://github.com/JuanEstebanLT/fastapi-guia1-sena.git
-cd fastapi-guia1-sena
+git clone https://github.com/JuanEstebanLT/fastapi-sena.git
+cd fastapi-sena
 py -m venv venv
 ```
 
@@ -212,4 +212,3 @@ Las pruebas usan `TestClient` y verifican respuestas correctas, CRUD y errores H
 
 Documentación: [FastAPI](https://fastapi.tiangolo.com/), [APIRouter](https://fastapi.tiangolo.com/tutorial/bigger-applications/), [Pydantic](https://docs.pydantic.dev/latest/concepts/models/) y [Uvicorn](https://www.uvicorn.org/).
 
-> El nombre histórico del repositorio es `fastapi-guia1-sena`. Si posteriormente se renombra desde **Settings → General → Repository name** a `fastapi-sena`, se actualizarán los enlaces y comandos de clonación del README para reflejar la nueva URL.
