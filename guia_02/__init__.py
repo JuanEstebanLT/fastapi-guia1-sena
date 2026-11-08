@@ -1,0 +1,1 @@
+"""Código de la Guía 2 de FastAPI."""

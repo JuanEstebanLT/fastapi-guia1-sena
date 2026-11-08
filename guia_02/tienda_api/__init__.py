@@ -1,0 +1,1 @@
+"""API de tienda con recursos organizados por APIRouter."""
