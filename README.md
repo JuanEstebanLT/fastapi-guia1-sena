@@ -34,10 +34,10 @@ La **Guía 1** introduce las solicitudes HTTP de consulta, parámetros y documen
 | Guía | Contenido | Acceso al código y documentación | Evidencias | Sustentación |
 | :--- | :--- | :--- | :--- | :--- |
 | **01 · Fundamentos** | Endpoints GET, parámetros de ruta y consulta, Swagger UI | [README](guia_01/README.md) · [Laboratorio](guia_01/laboratorio_ev03/main.py) · [Catálogo](guia_01/catalogo_ev04/main.py) | [Informe PDF](evidencias/guia_01/Guia_01_Informe_Final_FastAPI.pdf) | [YouTube](https://youtu.be/39X68AKH1gg) · [MP4](evidencias/guia_01/Guia_01_Sustentacion_FastAPI.mp4) |
-| **02 · CRUD modular** | POST, GET, PUT, DELETE; BaseModel, Pydantic y APIRouter | [README](guia_02/README.md) · [Productos](guia_02/tienda_api/routers/productos.py) · [Categorías](guia_02/tienda_api/routers/categorias.py) | [Evidencias de la Guía 2](evidencias/guia_02/README.md) | **Pendiente de grabación** |
+| **02 · CRUD modular** | POST, GET, PUT, DELETE; BaseModel, Pydantic y APIRouter | [README](guia_02/README.md) · [Productos](guia_02/tienda_api/routers/productos.py) · [Categorías](guia_02/tienda_api/routers/categorias.py) | [Informe PDF](evidencias/guia_02/GA2_FastAPI_Informe_Final_APA7_v1.0.pdf) · [Más evidencias](evidencias/guia_02/README.md) | **Pendiente de grabación** |
 | **03 · Próxima guía** | Por definir según el material del instructor | Aún no iniciada | [Espacio de evidencias](evidencias/guia_03/README.md) | No disponible |
 
-El documento académico final de la **Guía 2** está preparado en formato Word, pero **todavía no está publicado en GitHub**. Por esa razón no se presenta un enlace a un archivo inexistente.
+El **informe final de la Guía 2** se entrega en PDF, versión documental **1.0**, con las cuatro evidencias académicas y las capturas de Swagger UI. El enlace al PDF estará disponible al completar la publicación de las copias en las carpetas correspondientes.
 
 **[Consultar el índice central de evidencias](evidencias/README.md)**
 
@@ -70,7 +70,8 @@ fastapi-sena/
 │   │       ├── productos.py
 │   │       └── categorias.py
 │   └── evidencias/
-│       └── README.md
+│       ├── README.md
+│       └── GA2_FastAPI_Informe_Final_APA7_v1.0.pdf
 ├── evidencias/                       # Índice central, sin archivos sueltos
 │   ├── README.md
 │   ├── guia_01/
@@ -78,7 +79,8 @@ fastapi-sena/
 │   │   ├── Guia_01_Informe_Final_FastAPI.pdf
 │   │   └── Guia_01_Sustentacion_FastAPI.mp4
 │   ├── guia_02/
-│   │   └── README.md
+│   │   ├── README.md
+│   │   └── GA2_FastAPI_Informe_Final_APA7_v1.0.pdf
 │   └── guia_03/
 │       └── README.md
 ├── tests/
@@ -199,7 +201,7 @@ La carpeta `evidencias/` contiene únicamente el índice y las subcarpetas ident
 - [Evidencias Guía 2 — carpeta central](evidencias/guia_02/README.md) · [carpeta individual](guia_02/evidencias/README.md)
 - [Próximas evidencias — Guía 3](evidencias/guia_03/README.md)
 
-**Estado de entrega:** la Guía 1 cuenta con informe y video publicados. La Guía 2 cuenta con su código, documentación y pruebas publicados, y conserva pendiente la carga del informe Word al repositorio y la futura grabación del video explicativo. La Guía 3 no se ha iniciado.
+**Estado de entrega:** la Guía 1 conserva informe y video publicados. La Guía 2 cuenta con código, pruebas y documentación; el PDF final se incorporará en sus dos carpetas de evidencias mediante el siguiente commit. El video grupal sigue pendiente de grabación. La Guía 3 aún no se ha iniciado.
 
 ## Referencias técnicas
 

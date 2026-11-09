@@ -1,25 +1,32 @@
 # Evidencias — Guía 2: CRUD con FastAPI
 
-Este directorio conserva **las evidencias propias de la Guía 2**, además de su copia en la [carpeta general de evidencias](../../evidencias/guia_02/README.md).
+Este directorio contiene las evidencias individuales de la **Guía 2** del SENA, correspondientes a CRUD de productos y categorías, Pydantic y APIRouter.
 
-## Evidencias preparadas fuera de GitHub
+## Informe académico
 
-**Informe académico:** Desarrollo de API REST con FastAPI: CRUD, validación de datos y organización modular. Incluye GA2-AA1-EV01, GA2-AA1-EV02, GA2-AA2-EV03 y GA2-AA3-EV04, con las capturas de Swagger UI, tabla CRUD, mapa conceptual y código documentado.
+**Documento:** [GA2_FastAPI_Informe_Final_APA7_v1.0.pdf](GA2_FastAPI_Informe_Final_APA7_v1.0.pdf)  
+**Versión:** 1.0 · Formato académico APA 7 · 33 páginas.
 
-**Nombre de archivo aprobado para su publicación:**  
-GA2_FastAPI_Informe_Final_APA7_v1.0.docx
+El informe reúne las cuatro evidencias solicitadas:
 
-**Estado:** el documento Word está terminado, pero todavía **no se ha cargado a GitHub**. No se publica un enlace a un archivo inexistente.
+| Código | Actividad |
+| --- | --- |
+| GA2-AA1-EV01 | Cuestionario de reflexión inicial |
+| GA2-AA1-EV02 | Tabla CRUD y mapa conceptual |
+| GA2-AA2-EV03 | Laboratorio de productos con pruebas y capturas de Swagger UI |
+| GA2-AA3-EV04 | CRUD modular de categorías, pruebas 404 y 422 |
 
-**Video explicativo:** pendiente de grabación por el equipo; no existe enlace público todavía.
+El PDF debe cargarse en esta carpeta y en [evidencias/guia_02](../../evidencias/guia_02/README.md). El enlace de arriba funcionará una vez que se publique el archivo.
+
+## Video explicativo
+
+**Pendiente de grabación por el equipo.** Se incorporará aquí cuando esté disponible.
 
 ## Código y pruebas
 
 - [Aplicación principal](../tienda_api/main.py)
-- [CRUD de productos](../tienda_api/routers/productos.py)
-- [CRUD de categorías](../tienda_api/routers/categorias.py)
+- [Router de productos](../tienda_api/routers/productos.py)
+- [Router de categorías](../tienda_api/routers/categorias.py)
 - [Pruebas automatizadas](../../tests/test_guia_02.py)
-
-Al publicar el Word y el futuro video, conservar los mismos archivos tanto en esta carpeta como en la carpeta general, y actualizar los índices.
 
 [Volver al README de la Guía 2](../README.md).

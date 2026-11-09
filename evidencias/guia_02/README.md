@@ -1,13 +1,26 @@
 # Guía 2 — Evidencias generales
 
-Punto de consulta central para las evidencias de **CRUD, Pydantic y APIRouter**.
+Esta carpeta forma parte del índice central de evidencias de FastAPI-SENA. Conserva una copia del informe académico de la Guía 2, cuyo contenido corresponde a **CRUD, validación con Pydantic y organización con APIRouter**.
 
-**Informe final:** el documento académico APA 7, versión 1.0, ya está terminado fuera de GitHub. Está pendiente de cargar a este directorio y a [guia_02/evidencias](../../guia_02/evidencias/README.md), con el nombre:
+## Informe final
 
-**GA2_FastAPI_Informe_Final_APA7_v1.0.docx**
+[**GA2_FastAPI_Informe_Final_APA7_v1.0.pdf**](GA2_FastAPI_Informe_Final_APA7_v1.0.pdf)
 
-**Video explicativo:** se grabará posteriormente con los integrantes del equipo. El enlace aparecerá aquí cuando esté publicado; por ahora no existe.
+**Versión documental:** 1.0.  
+**Contenido:** cuatro evidencias GA2-AA1-EV01, GA2-AA1-EV02, GA2-AA2-EV03 y GA2-AA3-EV04; mapa conceptual, capturas de Swagger UI, tablas y explicación del código.
 
-Mientras se completa la carga del documento, pueden consultarse el [README de la Guía 2](../../guia_02/README.md), el [código fuente](../../guia_02/tienda_api/main.py) y las [pruebas](../../tests/test_guia_02.py).
+El informe también se publicará en la [carpeta individual de evidencias](../../guia_02/evidencias/README.md). Los enlaces al PDF funcionarán cuando ambas copias sean cargadas al repositorio.
 
-[Volver al índice de evidencias](../README.md).
+## Video explicativo
+
+Pendiente de grabación y publicación por el equipo.
+
+## Enlaces de la práctica
+
+- [Guía 2 — documentación de ejecución](../../guia_02/README.md)
+- [Aplicación FastAPI](../../guia_02/tienda_api/main.py)
+- [Productos](../../guia_02/tienda_api/routers/productos.py)
+- [Categorías](../../guia_02/tienda_api/routers/categorias.py)
+- [Pruebas automatizadas](../../tests/test_guia_02.py)
+
+[Volver al índice general de evidencias](../README.md).

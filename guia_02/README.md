@@ -14,7 +14,7 @@ Esta guía amplía la Mini-API de la Guía 1 para administrar **productos y cate
 | GA2-AA2-EV03 | CRUD de productos y capturas HTTP 201, 200, 404 y 422 | Código publicado y capturas incluidas en el informe |
 | GA2-AA3-EV04 | CRUD de categorías, validación y pruebas en Swagger UI | Código publicado y capturas incluidas en el informe |
 
-**Estado de publicación de las evidencias:** el Word final está preparado fuera de GitHub, pero su carga a las dos carpetas del repositorio sigue pendiente. [Ver evidencias de esta guía](evidencias/README.md) y [el índice general](../evidencias/guia_02/README.md).
+**Informe final (versión 1.0):** [Consultar PDF de las cuatro evidencias](evidencias/GA2_FastAPI_Informe_Final_APA7_v1.0.pdf). El enlace estará disponible cuando se incorporen las copias del informe al repositorio. [Carpeta personal](evidencias/README.md) · [Índice general](../evidencias/guia_02/README.md).
 
 ## Estructura del módulo
 
@@ -30,7 +30,8 @@ guia_02/
 │       ├── productos.py
 │       └── categorias.py
 └── evidencias/
-    └── README.md
+    ├── README.md
+    └── GA2_FastAPI_Informe_Final_APA7_v1.0.pdf
 ~~~
 
 - [main.py](tienda_api/main.py): inicia FastAPI, registra los routers y publica la ruta de inicio.
@@ -117,7 +118,7 @@ Las pruebas cubren rutas, esquema OpenAPI, operaciones CRUD y errores 404/422. C
 
 ## Entregables y sustentación
 
-- **Informe:** Guía 2 de FastAPI — CRUD, Pydantic y APIRouter (versión documental 1.0, APA 7). Archivo preparado; carga al repositorio pendiente.
+- **Informe:** [GA2_FastAPI_Informe_Final_APA7_v1.0.pdf](evidencias/GA2_FastAPI_Informe_Final_APA7_v1.0.pdf). Contiene las cuatro evidencias, tabla y mapa conceptual, pruebas manuales y explicaciones técnicas. Disponible tras la publicación del archivo.
 - **Ubicación personal:** [guia_02/evidencias](evidencias/README.md).
 - **Ubicación central:** [evidencias/guia_02](../evidencias/guia_02/README.md).
 - **Video explicativo grupal:** pendiente de grabación; se añadirá un enlace cuando exista. La guía escrita no establece un video obligatorio.
