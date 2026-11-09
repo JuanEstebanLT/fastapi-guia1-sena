@@ -9,7 +9,7 @@ Esta carpeta forma parte del índice central de evidencias de FastAPI-SENA. Cons
 **Versión documental:** 1.0.  
 **Contenido:** cuatro evidencias GA2-AA1-EV01, GA2-AA1-EV02, GA2-AA2-EV03 y GA2-AA3-EV04; mapa conceptual, capturas de Swagger UI, tablas y explicación del código.
 
-El informe también se publicará en la [carpeta individual de evidencias](../../guia_02/evidencias/README.md). Los enlaces al PDF funcionarán cuando ambas copias sean cargadas al repositorio.
+El informe también está publicado en la [carpeta individual de evidencias](../../guia_02/evidencias/README.md). Ambas copias son idénticas.
 
 ## Video explicativo
 

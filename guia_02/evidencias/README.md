@@ -16,7 +16,7 @@ El informe reúne las cuatro evidencias solicitadas:
 | GA2-AA2-EV03 | Laboratorio de productos con pruebas y capturas de Swagger UI |
 | GA2-AA3-EV04 | CRUD modular de categorías, pruebas 404 y 422 |
 
-El PDF debe cargarse en esta carpeta y en [evidencias/guia_02](../../evidencias/guia_02/README.md). El enlace de arriba funcionará una vez que se publique el archivo.
+El PDF está publicado en esta carpeta y cuenta con una copia idéntica en [evidencias/guia_02](../../evidencias/guia_02/README.md).
 
 ## Video explicativo
 

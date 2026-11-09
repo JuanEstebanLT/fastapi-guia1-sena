@@ -37,7 +37,7 @@ La **Guía 1** introduce las solicitudes HTTP de consulta, parámetros y documen
 | **02 · CRUD modular** | POST, GET, PUT, DELETE; BaseModel, Pydantic y APIRouter | [README](guia_02/README.md) · [Productos](guia_02/tienda_api/routers/productos.py) · [Categorías](guia_02/tienda_api/routers/categorias.py) | [Informe PDF](evidencias/guia_02/GA2_FastAPI_Informe_Final_APA7_v1.0.pdf) · [Más evidencias](evidencias/guia_02/README.md) | **Pendiente de grabación** |
 | **03 · Próxima guía** | Por definir según el material del instructor | Aún no iniciada | [Espacio de evidencias](evidencias/guia_03/README.md) | No disponible |
 
-El **informe final de la Guía 2** se entrega en PDF, versión documental **1.0**, con las cuatro evidencias académicas y las capturas de Swagger UI. El enlace al PDF estará disponible al completar la publicación de las copias en las carpetas correspondientes.
+El **informe final de la Guía 2** se entrega en PDF, versión documental **1.0**, con las cuatro evidencias académicas y las capturas de Swagger UI. El informe está publicado en las carpetas de evidencias de la Guía 2 y en el índice central, con enlaces directos a ambas copias.
 
 **[Consultar el índice central de evidencias](evidencias/README.md)**
 
@@ -201,7 +201,7 @@ La carpeta `evidencias/` contiene únicamente el índice y las subcarpetas ident
 - [Evidencias Guía 2 — carpeta central](evidencias/guia_02/README.md) · [carpeta individual](guia_02/evidencias/README.md)
 - [Próximas evidencias — Guía 3](evidencias/guia_03/README.md)
 
-**Estado de entrega:** la Guía 1 conserva informe y video publicados. La Guía 2 cuenta con código, pruebas y documentación; el PDF final se incorporará en sus dos carpetas de evidencias mediante el siguiente commit. El video grupal sigue pendiente de grabación. La Guía 3 aún no se ha iniciado.
+**Estado de entrega:** la Guía 1 conserva informe y video publicados. La Guía 2 cuenta con código, pruebas y documentación; el PDF final está publicado en sus dos carpetas de evidencias. El video grupal sigue pendiente de grabación. La Guía 3 aún no se ha iniciado.
 
 ## Referencias técnicas
 
