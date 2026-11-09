@@ -1,13 +1,25 @@
-# Evidencias de la Guía 2
+# Evidencias — Guía 2: CRUD con FastAPI
 
-Esta carpeta se reserva para las evidencias académicas de la Guía 2. El código ya se encuentra en `../tienda_api/` y las pruebas automatizadas en `../../tests/test_guia_02.py`.
+Este directorio conserva **las evidencias propias de la Guía 2**, además de su copia en la [carpeta general de evidencias](../../evidencias/guia_02/README.md).
 
-**Pendiente para completar la entrega:**
+## Evidencias preparadas fuera de GitHub
 
-- Documento con las cuatro preguntas de reflexión inicial (GA2-AA1-EV01).
-- Tabla CRUD y mapa conceptual de CRUD, Pydantic, BaseModel, APIRouter, prefix y tags (GA2-AA1-EV02).
-- Capturas de Swagger UI para crear dos productos, consultar, actualizar y eliminar (GA2-AA2-EV03).
-- Capturas de los cinco endpoints de categorías más errores `404` y `422` (GA2-AA3-EV04).
-- Video de sustentación, si así lo confirma el instructor.
+**Informe académico:** Desarrollo de API REST con FastAPI: CRUD, validación de datos y organización modular. Incluye GA2-AA1-EV01, GA2-AA1-EV02, GA2-AA2-EV03 y GA2-AA3-EV04, con las capturas de Swagger UI, tabla CRUD, mapa conceptual y código documentado.
 
-No se incluyen capturas ficticias ni se declara completada una evidencia que aún no ha sido documentada.
+**Nombre de archivo aprobado para su publicación:**  
+GA2_FastAPI_Informe_Final_APA7_v1.0.docx
+
+**Estado:** el documento Word está terminado, pero todavía **no se ha cargado a GitHub**. No se publica un enlace a un archivo inexistente.
+
+**Video explicativo:** pendiente de grabación por el equipo; no existe enlace público todavía.
+
+## Código y pruebas
+
+- [Aplicación principal](../tienda_api/main.py)
+- [CRUD de productos](../tienda_api/routers/productos.py)
+- [CRUD de categorías](../tienda_api/routers/categorias.py)
+- [Pruebas automatizadas](../../tests/test_guia_02.py)
+
+Al publicar el Word y el futuro video, conservar los mismos archivos tanto en esta carpeta como en la carpeta general, y actualizar los índices.
+
+[Volver al README de la Guía 2](../README.md).

@@ -1,22 +1,27 @@
-# Guía 2 — CRUD de tienda con FastAPI
+# Guía 2 — CRUD, validación Pydantic y organización modular
 
-**SENA · ADSO · Instructor: Mateo Arroyave · Duración de la guía: 12 horas**
+**SENA · ADSO · Instructor: Mateo Arroyave · Duración: 12 horas**  
+**Integrantes:** Juan Esteban Lezcano Tejada, Mariana Suárez y Emanuel Villa.
 
-Continuación de la Guía 1: la API pasa de consultas GET a operaciones CRUD y se organiza por módulos con `APIRouter`. La validación de cuerpos JSON se realiza mediante modelos `Pydantic` que heredan de `BaseModel`.
+Esta guía amplía la Mini-API de la Guía 1 para administrar **productos y categorías** con operaciones CRUD, validar datos recibidos en JSON mediante **Pydantic (BaseModel)** y separar recursos con **APIRouter**.
 
-## Evidencias de la guía
+## Evidencias solicitadas
 
-| Evidencia | Requisito | Estado |
+| Evidencia | Descripción | Estado de preparación |
 | --- | --- | --- |
-| GA2-AA1-EV01 | Cuatro reflexiones sobre modularidad, validación, operaciones y CRUD | Pendiente de documento académico |
-| GA2-AA1-EV02 | Tabla CRUD/HTTP/códigos y mapa conceptual | Pendiente de documento académico |
-| GA2-AA2-EV03 | CRUD de productos con modelos, `APIRouter`, respuestas 201/404/422 y pruebas | Código implementado, capturas de `/docs` pendientes |
-| GA2-AA3-EV04 | CRUD de categorías completo e integrado en `main.py` | Código implementado, capturas de `/docs` pendientes |
+| GA2-AA1-EV01 | Reflexión inicial: cuatro respuestas | Desarrollada en el informe final |
+| GA2-AA1-EV02 | Cuadro CRUD y mapa conceptual de seis términos | Desarrollados en el informe final |
+| GA2-AA2-EV03 | CRUD de productos y capturas HTTP 201, 200, 404 y 422 | Código publicado y capturas incluidas en el informe |
+| GA2-AA3-EV04 | CRUD de categorías, validación y pruebas en Swagger UI | Código publicado y capturas incluidas en el informe |
 
-## Arquitectura
+**Estado de publicación de las evidencias:** el Word final está preparado fuera de GitHub, pero su carga a las dos carpetas del repositorio sigue pendiente. [Ver evidencias de esta guía](evidencias/README.md) y [el índice general](../evidencias/guia_02/README.md).
 
-```text
+## Estructura del módulo
+
+~~~text
 guia_02/
+├── __init__.py
+├── README.md
 ├── tienda_api/
 │   ├── __init__.py
 │   ├── main.py
@@ -24,91 +29,97 @@ guia_02/
 │       ├── __init__.py
 │       ├── productos.py
 │       └── categorias.py
-├── evidencias/
-│   └── README.md
-└── README.md
-```
+└── evidencias/
+    └── README.md
+~~~
 
-Se usa el nombre `tienda_api` con guion bajo para que Python pueda importar el paquete desde el directorio raíz. Cumple la misma finalidad de la carpeta `tienda-api` propuesta por la guía.
+- [main.py](tienda_api/main.py): inicia FastAPI, registra los routers y publica la ruta de inicio.
+- [productos.py](tienda_api/routers/productos.py): contiene el modelo ProductoEntrada, una lista de productos y cinco endpoints.
+- [categorias.py](tienda_api/routers/categorias.py): contiene CategoriaEntrada, una lista de categorías y cinco endpoints.
+- [Pruebas automatizadas](../tests/test_guia_02.py): utilizan FastAPI TestClient y pytest.
 
-- `main.py` crea la aplicación y registra los dos routers; también expone `GET /`.
-- `productos.py` contiene el modelo `ProductoEntrada`, los datos y cinco endpoints.
-- `categorias.py` contiene el modelo `CategoriaEntrada`, los datos y cinco endpoints.
-- `__init__.py` identifica las carpetas como paquetes importables.
+Se utiliza el nombre importable **tienda_api** en lugar de la carpeta **tienda-api** del ejemplo de la guía. El comportamiento exigido es equivalente y el comando de ejecución se adapta a esta estructura.
 
-## Ejecución
+## Instalación y ejecución
 
-Desde la **raíz del repositorio**, instalar dependencias y activar entorno virtual (ver [README principal](../README.md)):
+Desde la raíz del repositorio, activar el entorno virtual e instalar dependencias según el [README principal](../README.md). Luego iniciar la aplicación:
 
-```powershell
+~~~powershell
 python -m uvicorn guia_02.tienda_api.main:app --reload
-```
+~~~
 
-Abrir [Swagger UI](http://127.0.0.1:8000/docs) y comprobar las secciones **Productos** y **Categorias**.
+Visitar [Swagger UI](http://127.0.0.1:8000/docs). Allí se muestran las secciones **Productos**, **Categorias** e **Inicio**.
 
-## Endpoints de productos
+## Endpoints disponibles
 
-| Operación | Método | Endpoint | Resultado |
+| Recurso | Método | Ruta | Respuesta habitual |
 | --- | --- | --- | --- |
-| Listar | GET | `/productos` | 200 |
-| Consultar por ID | GET | `/productos/{producto_id}` | 200 o 404 |
-| Crear | POST | `/productos` | 201 |
-| Actualizar | PUT | `/productos/{producto_id}` | 200 o 404 |
-| Eliminar | DELETE | `/productos/{producto_id}` | 200 o 404 |
+| Inicio | GET | / | 200 |
+| Productos | GET | /productos | 200 |
+| Productos | GET | /productos/{producto_id} | 200 o 404 |
+| Productos | POST | /productos | 201 o 422 |
+| Productos | PUT | /productos/{producto_id} | 200, 404 o 422 |
+| Productos | DELETE | /productos/{producto_id} | 200 o 404 |
+| Categorías | GET | /categorias | 200 |
+| Categorías | GET | /categorias/{categoria_id} | 200 o 404 |
+| Categorías | POST | /categorias | 201 o 422 |
+| Categorías | PUT | /categorias/{categoria_id} | 200, 404 o 422 |
+| Categorías | DELETE | /categorias/{categoria_id} | 200 o 404 |
 
-Cuerpo JSON de ejemplo para crear o actualizar:
+### Modelo de producto
 
-```json
-{"nombre":"Audifonos USB", "precio": 120000, "categoria":"Audio"}
-```
+ProductoEntrada hereda de BaseModel y requiere **nombre: str**, **precio: float** y **categoria: str**. El servidor asigna el identificador.
 
-`ProductoEntrada` recibe `nombre: str`, `precio: float` y `categoria: str`; el `id` lo asigna el servidor. Si falta un campo obligatorio o llega un precio no convertible a número, FastAPI responde `422`.
+~~~json
+{
+  "nombre": "Webcam Full HD",
+  "precio": 185000,
+  "categoria": "Perifericos"
+}
+~~~
 
-## Endpoints de categorías
+### Modelo de categoría
 
-| Operación | Método | Endpoint | Resultado |
-| --- | --- | --- | --- |
-| Listar | GET | `/categorias` | 200 |
-| Consultar por ID | GET | `/categorias/{categoria_id}` | 200 o 404 |
-| Crear | POST | `/categorias` | 201 |
-| Actualizar | PUT | `/categorias/{categoria_id}` | 200 o 404 |
-| Eliminar | DELETE | `/categorias/{categoria_id}` | 200 o 404 |
+CategoriaEntrada hereda de BaseModel y exige **nombre: str**. El servidor genera el identificador.
 
-Cuerpo JSON de ejemplo para crear o actualizar:
+~~~json
+{
+  "nombre": "Accesorios Gamer"
+}
+~~~
 
-```json
-{"nombre":"Accesorios"}
-```
+En ambos recursos, una entidad inexistente genera **404** mediante HTTPException. Un cuerpo JSON con campos obligatorios ausentes o datos incompatibles produce la validación automática **422**. Los registros se almacenan en listas de Python y se restablecen al reiniciar el servidor: esta guía **no implementa base de datos**.
 
-`CategoriaEntrada` recibe `nombre: str`; el servidor genera el identificador. Un ID inexistente produce `404` y un cuerpo inválido produce `422`.
+## Procedimiento de comprobación en Swagger UI
 
-## Ejercicios de apropiación
+1. Registrar dos productos con POST /productos y consultarlos con GET /productos.
+2. Actualizar el precio de un producto con PUT y confirmarlo mediante GET /productos/{id}.
+3. Eliminar un producto con DELETE y verificar que ya no aparece en el listado.
+4. Probar un identificador inexistente para obtener 404 y datos inválidos para obtener 422.
+5. Repetir la secuencia de consulta, creación, actualización, eliminación y errores con las categorías.
 
-Las actividades prácticas del instructor requieren:
-
-1. Crear **dos productos** con `POST /productos` y listarlos con GET.
-2. Actualizar un precio con `PUT` y volver a consultar el producto.
-3. Eliminar un producto con `DELETE` y comprobar que no está en la lista.
-4. Provocar y capturar errores `404` y `422` para productos.
-5. Probar en Swagger UI las **cinco rutas de categorías**, incluidos errores `404` y `422`.
-
-Los datos son **temporales en memoria**: reiniciar el servidor restaura los productos y categorías iniciales. No hay base de datos ni relación de integridad referencial entre ambos conjuntos en esta guía.
+El informe académico contiene las capturas documentadas. Estas capturas se generaron durante la práctica; no se sustituyen por resultados artificiales.
 
 ## Pruebas automatizadas
 
-Desde la raíz:
-
-```powershell
+~~~powershell
 python -m pip install -r requirements-dev.txt
 python -m pytest tests/test_guia_02.py -q
-```
+~~~
 
-La suite verifica CRUD de productos y categorías, documentación OpenAPI, códigos `201`, `404` y `422`. Las pruebas automatizadas no sustituyen las capturas exigidas por la guía.
+Para ejecutar todas las pruebas:
 
-## Entrega académica pendiente
+~~~powershell
+python -m pytest tests -q
+~~~
 
-La carpeta [evidencias](evidencias/README.md) indica qué capturas y documentos faltan antes de entregar. También deberán incorporarse EV01 y EV02 en el informe grupal. La grabación de sustentación depende de las instrucciones de exposición del instructor.
+Las pruebas cubren rutas, esquema OpenAPI, operaciones CRUD y errores 404/422. Constituyen una comprobación técnica complementaria, no una sustitución de las evidencias solicitadas desde /docs.
 
-**Integrantes:** Juan Esteban Lezcano Tejada, Mariana Suárez y Emanuel Villa.
+## Entregables y sustentación
 
-[Regresar al índice de todas las guías](../README.md).
+- **Informe:** Guía 2 de FastAPI — CRUD, Pydantic y APIRouter (versión documental 1.0, APA 7). Archivo preparado; carga al repositorio pendiente.
+- **Ubicación personal:** [guia_02/evidencias](evidencias/README.md).
+- **Ubicación central:** [evidencias/guia_02](../evidencias/guia_02/README.md).
+- **Video explicativo grupal:** pendiente de grabación; se añadirá un enlace cuando exista. La guía escrita no establece un video obligatorio.
+
+[Volver al índice general](../README.md).
