@@ -20,7 +20,7 @@ El PDF está publicado en esta carpeta y cuenta con una copia idéntica en [evid
 
 ## Video explicativo
 
-**Video de sustentación:** [GA2_FastAPI_Sustentacion_v1.0.mp4](GA2_FastAPI_Sustentacion_v1.0.mp4). Publicado en esta carpeta y en el [índice central de evidencias](../../evidencias/guia_02/README.md).
+**Video de sustentación:** [Ver en YouTube](https://youtu.be/8UsyPKH7UBY) · [Archivo MP4](GA2_FastAPI_Sustentacion_v1.0.mp4). Publicado en esta carpeta y en el [índice central de evidencias](../../evidencias/guia_02/README.md).
 
 ## Código y pruebas
 
