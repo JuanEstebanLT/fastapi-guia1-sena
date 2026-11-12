@@ -31,7 +31,8 @@ guia_02/
 │       └── categorias.py
 └── evidencias/
     ├── README.md
-    └── GA2_FastAPI_Informe_Final_APA7_v1.0.pdf
+    ├── GA2_FastAPI_Informe_Final_APA7_v1.0.pdf
+    └── GA2_FastAPI_Sustentacion_v1.0.mp4
 ~~~
 
 - [main.py](tienda_api/main.py): inicia FastAPI, registra los routers y publica la ruta de inicio.
@@ -121,6 +122,6 @@ Las pruebas cubren rutas, esquema OpenAPI, operaciones CRUD y errores 404/422. C
 - **Informe:** [GA2_FastAPI_Informe_Final_APA7_v1.0.pdf](evidencias/GA2_FastAPI_Informe_Final_APA7_v1.0.pdf). Contiene las cuatro evidencias, tabla y mapa conceptual, pruebas manuales y explicaciones técnicas. Publicado y disponible para consulta.
 - **Ubicación personal:** [guia_02/evidencias](evidencias/README.md).
 - **Ubicación central:** [evidencias/guia_02](../evidencias/guia_02/README.md).
-- **Video explicativo grupal:** pendiente de grabación; se añadirá un enlace cuando exista. La guía escrita no establece un video obligatorio.
+- **Video explicativo grupal:** [GA2_FastAPI_Sustentacion_v1.0.mp4](evidencias/GA2_FastAPI_Sustentacion_v1.0.mp4). Grabación publicada como complemento de la sustentación académica.
 
 [Volver al índice general](../README.md).

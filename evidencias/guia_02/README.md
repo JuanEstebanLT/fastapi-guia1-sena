@@ -13,7 +13,9 @@ El informe también está publicado en la [carpeta individual de evidencias](../
 
 ## Video explicativo
 
-Pendiente de grabación y publicación por el equipo.
+[**GA2_FastAPI_Sustentacion_v1.0.mp4**](GA2_FastAPI_Sustentacion_v1.0.mp4)
+
+La grabación también está disponible en la [carpeta individual de evidencias](../../guia_02/evidencias/README.md). Ambas copias son idénticas.
 
 ## Enlaces de la práctica
 
